@@ -1,7 +1,6 @@
 package entities;
 
 import utilz.Constants.BALL;
-import utilz.Constants.GAME_WINDOW;
 
 import java.awt.*;
 
@@ -13,21 +12,34 @@ public class Ball extends Entity {
     public Ball(float xPosition, float yPosition, float width, float height, Color color, float speed) {
         super(xPosition, yPosition, width, height, color, speed);
 
+        generateInitialVelocity();
+    }
+
+    private void generateInitialVelocity() {
         do {
-            xVelocity = (Math.random() * speed) - speed;
-            yVelocity = (Math.random() * speed) - speed;
+            xVelocity = (Math.random() * getSpeed()) - getSpeed();
+            yVelocity = (Math.random() * getSpeed()) - getSpeed();
             System.out.println(xVelocity + yVelocity);
-        } while (xVelocity + yVelocity > speed && xVelocity + yPosition < -speed);
+        } while (xVelocity + yVelocity > getSpeed() && xVelocity + getYPosition() < -getSpeed());
     }
 
     public void update() {
         if (canMoveUp() && canMoveRight() && canMoveDown() && canMoveLeft()) {
-            setXPosition(getXPosition() + (float) xVelocity);
-            setYPosition(getYPosition() + (float) yVelocity);
+            moveBall();
         } else {
-            xVelocity *= -1;
-            yVelocity *= -1;
+            if (!canMoveUp() || !canMoveDown()) {
+                yVelocity *= -1;
+                moveBall();
+            } else if (!canMoveRight() || !canMoveLeft()) {
+                xVelocity *= -1;
+                moveBall();
+            }
         }
+    }
+
+    private void moveBall() {
+        setXPosition(getXPosition() + (float) xVelocity);
+        setYPosition(getYPosition() + (float) yVelocity);
     }
 
     @Override
