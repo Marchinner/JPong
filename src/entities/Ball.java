@@ -14,10 +14,10 @@ public class Ball extends Entity {
         super(xPosition, yPosition, width, height, color, speed);
 
         do {
-            xVelocity = Math.random() * speed;
-            yVelocity = Math.random() * speed;
+            xVelocity = (Math.random() * speed) - speed;
+            yVelocity = (Math.random() * speed) - speed;
             System.out.println(xVelocity + yVelocity);
-        } while (xVelocity + yVelocity != speed);
+        } while (xVelocity + yVelocity > speed && xVelocity + yPosition < -speed);
     }
 
     public void update() {
@@ -28,7 +28,6 @@ public class Ball extends Entity {
             xVelocity *= -1;
             yVelocity *= -1;
         }
-        System.out.println("VETORIAL SPEED: x = " + xVelocity + "; y = " + yVelocity);
     }
 
     @Override
