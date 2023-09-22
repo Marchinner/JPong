@@ -21,10 +21,6 @@ public class Score {
         graphics2D.drawString("Computador", Constants.GAME_WINDOW.WIDTH - 250, 30);
     }
 
-    public void update() {
-
-    }
-
     public int getPlayerScore() {
         return playerScore;
     }
