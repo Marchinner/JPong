@@ -30,6 +30,10 @@ public class Ball extends Entity {
     public void update() {
         if (canMoveUp() && canMoveRight() && canMoveDown() && canMoveLeft()) {
             moveBall();
+            if (touchedPlayerPaddle(player)) {
+                xVelocity *= -1;
+                moveBall();
+            }
         } else {
             if (!canMoveUp() || !canMoveDown()) {
                 yVelocity *= -1;
@@ -39,21 +43,24 @@ public class Ball extends Entity {
                 moveBall();
             }
         }
-        touchedPlayerPaddle(player);
     }
 
     private boolean touchedPlayerPaddle(Player player) {
-        if (getXPosition() <= player.getXPosition() + player.getWidth()) {
-            if (getHeight() > player.getYPosition() && getHeight() < player.getYPosition() + player.getHeight()) {
-                System.out.println("TOUCHED PLAYER");
+        if (isOnRange(player)) {
+            if (getYPosition() >= player.getYPosition() && getYPosition() <= player.getYPosition() + player.getHeight() ) {
+                System.out.println("TOUCHED!");
                 return true;
             } else {
-                System.out.println("ALMOST");
+                System.out.println("NO TOUCH!");
                 return false;
             }
         } else {
             return false;
         }
+    }
+
+    private boolean isOnRange(Entity entity) {
+        return getXPosition() <= entity.getXPosition() + entity.getWidth();
     }
 
     private void moveBall() {
