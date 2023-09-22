@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="JPong:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JPong_jar</output-path>
+    <root id="archive" name="JPong_jar.jar">
+      <element id="module-output" name="JPong" />
+    </root>
+  </artifact>
+</component>
