@@ -1,6 +1,7 @@
 package entities;
 
 import inputs.KeyboardManager;
+import main.Score;
 import utilz.Constants.BALL;
 
 import java.awt.*;
@@ -11,13 +12,15 @@ public class Ball extends Entity {
     private double yVelocity;
     private Player player;
     private Enemy enemy;
+    private Score gameScore;
 
     public Ball(float xPosition, float yPosition, float width, float height, Color color, float speed,
                 KeyboardManager keyboardManager, Player player,
-                Enemy enemy, String name) {
+                Enemy enemy, String name, Score gameScore) {
         super(xPosition, yPosition, width, height, color, speed, keyboardManager, name);
         this.player = player;
         this.enemy = enemy;
+        this.gameScore = gameScore;
 
         generateInitialVelocity();
     }
@@ -41,6 +44,11 @@ public class Ball extends Entity {
                 yVelocity *= -1;
                 moveBall();
             } else if (!canMoveRight() || !canMoveLeft()) {
+                if (!canMoveRight()) {
+                    gameScore.setPlayerScore(gameScore.getPlayerScore() + 1);
+                } else if (!canMoveLeft()) {
+                    gameScore.setEnemyScore(gameScore.getEnemyScore() + 1);
+                }
                 xVelocity *= -1;
                 moveBall();
             }
@@ -53,7 +61,6 @@ public class Ball extends Entity {
                 System.out.println("TOUCHED " + paddle.name + "!");
                 return true;
             } else {
-                System.out.println("NO TOUCH!");
                 return false;
             }
         }

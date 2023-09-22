@@ -17,6 +17,7 @@ public class Game implements Runnable {
     private Player player;
     private Enemy enemy;
     private Ball ball;
+    private Score gameScore;
     private KeyboardManager keyboardManager = new KeyboardManager();
 
     public Game() {
@@ -60,6 +61,8 @@ public class Game implements Runnable {
                 "enemy"
         );
 
+        gameScore = new Score();
+
         ball = new Ball(
                 GAME_WINDOW.WIDTH / 2f,
                 GAME_WINDOW.HEIGHT / 2f,
@@ -70,8 +73,10 @@ public class Game implements Runnable {
                 null,
                 player,
                 enemy,
-                "ball"
+                "ball",
+                gameScore
         );
+
     }
 
     private void update() {
@@ -85,6 +90,7 @@ public class Game implements Runnable {
         player.draw(graphics);
         enemy.draw(graphics);
         ball.draw(graphics);
+        gameScore.draw(graphics);
     }
 
     private void background(Graphics graphics) {
