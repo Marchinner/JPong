@@ -3,7 +3,7 @@
 
 # JPong
 
-![Static Badge](https://img.shields.io/badge/ler_em_portugu%C3%AAs-green?link=https%3A%2F%2Fgithub.com%2FMarchinner%2FJPong%2Fblob%2Fmaster%2Fres%2FREADME-ptbr.md)
+![Static Badge](https://img.shields.io/badge/ler_em_portugu%C3%AAs-green?link=https://github.com/Marchinner/JPong/blob/master/res/README-ptbr.md)
 
 
 Behold, my inaugural masterpiece! I've crafted this game from scratch, without the crutch of tutorials or external assistance. My only companion on this creative journey has been the official Java Documentation. Why, you ask? Because my goal was not just to create a game, but to embark on a passionate odyssey of Java mastery and the enchanting realm of Game and Engine Development. My heart has found its true calling in this captivating pursuit.
