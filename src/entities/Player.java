@@ -9,19 +9,17 @@ import java.awt.event.KeyEvent;
 
 public class Player extends Entity {
 
-    private KeyboardManager keyboardManager;
-
     public Player(float xPosition, float yPosition, float width, float height, Color color, float speed,
-                  KeyboardManager keyboardManager) {
-        super(xPosition, yPosition, width, height, color, speed);
-        this.keyboardManager = keyboardManager;
+                  KeyboardManager keyboardManager, String name) {
+        super(xPosition, yPosition, width, height, color, speed, keyboardManager, name);
     }
 
     public void update() {
-        if (keyboardManager.isKeyPressed(KeyEvent.VK_UP)) {
+        if (getKeyboardManager().isKeyPressed(KeyEvent.VK_UP)) {
             moveUp();
-        } else if (keyboardManager.isKeyPressed(KeyEvent.VK_DOWN)) {
+        } else if (getKeyboardManager().isKeyPressed(KeyEvent.VK_DOWN)) {
             moveDown();
         }
     }
+
 }

@@ -46,18 +46,8 @@ public class Game implements Runnable {
                 PADDLE.HEIGHT,
                 PADDLE.COLOR,
                 PADDLE.SPEED,
-                keyboardManager);
-
-        ball = new Ball(
-                GAME_WINDOW.WIDTH / 2f,
-                GAME_WINDOW.HEIGHT / 2f,
-                BALL.WIDTH,
-                BALL.HEIGHT,
-                BALL.COLOR,
-                BALL.SPEED,
-                player,
-                enemy
-        );
+                keyboardManager,
+                "player");
 
         enemy = new Enemy(
                 GAME_WINDOW.WIDTH - PADDLE.X_SPAWN_POINT,
@@ -66,14 +56,28 @@ public class Game implements Runnable {
                 PADDLE.HEIGHT,
                 PADDLE.COLOR,
                 PADDLE.SPEED,
-                ball
+                null,
+                "enemy"
+        );
+
+        ball = new Ball(
+                GAME_WINDOW.WIDTH / 2f,
+                GAME_WINDOW.HEIGHT / 2f,
+                BALL.WIDTH,
+                BALL.HEIGHT,
+                BALL.COLOR,
+                BALL.SPEED,
+                null,
+                player,
+                enemy,
+                "ball"
         );
     }
 
     private void update() {
         player.update();
-        enemy.update();
         ball.update();
+        enemy.update(ball);
     }
 
     public void render(Graphics graphics) {

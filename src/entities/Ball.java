@@ -1,5 +1,6 @@
 package entities;
 
+import inputs.KeyboardManager;
 import utilz.Constants.BALL;
 
 import java.awt.*;
@@ -11,9 +12,10 @@ public class Ball extends Entity {
     private Player player;
     private Enemy enemy;
 
-    public Ball(float xPosition, float yPosition, float width, float height, Color color, float speed, Player player,
-                Enemy enemy) {
-        super(xPosition, yPosition, width, height, color, speed);
+    public Ball(float xPosition, float yPosition, float width, float height, Color color, float speed,
+                KeyboardManager keyboardManager, Player player,
+                Enemy enemy, String name) {
+        super(xPosition, yPosition, width, height, color, speed, keyboardManager, name);
         this.player = player;
         this.enemy = enemy;
 
@@ -30,7 +32,7 @@ public class Ball extends Entity {
     public void update() {
         if (canMoveUp() && canMoveRight() && canMoveDown() && canMoveLeft()) {
             moveBall();
-            if (touchedPlayerPaddle(player)) {
+            if (touchedPaddle(player) || touchedPaddle(enemy)) {
                 xVelocity *= -1;
                 moveBall();
             }
@@ -45,22 +47,26 @@ public class Ball extends Entity {
         }
     }
 
-    private boolean touchedPlayerPaddle(Player player) {
-        if (isOnRange(player)) {
-            if (getYPosition() >= player.getYPosition() && getYPosition() <= player.getYPosition() + player.getHeight() ) {
-                System.out.println("TOUCHED!");
+    private boolean touchedPaddle(Entity paddle) {
+        if (isOnPaddleRange(paddle)) {
+            if (getYPosition() >= paddle.getYPosition() && getYPosition() <= paddle.getYPosition() + paddle.getHeight()) {
+                System.out.println("TOUCHED " + paddle.name + "!");
                 return true;
             } else {
                 System.out.println("NO TOUCH!");
                 return false;
             }
-        } else {
-            return false;
         }
+
+        return false;
     }
 
-    private boolean isOnRange(Entity entity) {
-        return getXPosition() <= entity.getXPosition() + entity.getWidth();
+    private boolean isOnPaddleRange(Entity paddle) {
+        if (paddle.name.equals("player")) {
+            return getXPosition() <= paddle.getXPosition() + paddle.getWidth();
+        } else {
+            return getXPosition() >= paddle.getXPosition() - paddle.getWidth();
+        }
     }
 
     private void moveBall() {

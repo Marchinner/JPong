@@ -1,5 +1,6 @@
 package entities;
 
+import inputs.KeyboardManager;
 import utilz.Constants.PADDLE;
 import utilz.Constants.GAME_WINDOW;
 
@@ -13,14 +14,20 @@ public class Entity {
     private float height;
     private Color color;
     private float speed;
+    private KeyboardManager keyboardManager;
 
-    public Entity(float xPosition, float yPosition, float width, float height, Color color, float speed) {
+    public String name;
+
+    public Entity(float xPosition, float yPosition, float width, float height, Color color, float speed,
+                  KeyboardManager keyboardManager, String name) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.width = width;
         this.height = height;
         this.color = color;
         this.speed = speed;
+        this.keyboardManager = keyboardManager;
+        this.name = name;
     }
 
     protected boolean canMoveUp() {
@@ -64,6 +71,14 @@ public class Entity {
     public void draw(Graphics graphics) {
         graphics.setColor(color);
         graphics.fillRect((int) xPosition, (int) yPosition, (int) width, (int) height);
+    }
+
+    public KeyboardManager getKeyboardManager() {
+        return keyboardManager;
+    }
+
+    public void setKeyboardManager(KeyboardManager keyboardManager) {
+        this.keyboardManager = keyboardManager;
     }
 
     public float getXPosition() {
