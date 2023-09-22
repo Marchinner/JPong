@@ -54,7 +54,9 @@ public class Game implements Runnable {
                 BALL.WIDTH,
                 BALL.HEIGHT,
                 BALL.COLOR,
-                BALL.SPEED
+                BALL.SPEED,
+                player,
+                enemy
         );
 
         enemy = new Enemy(

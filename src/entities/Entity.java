@@ -1,5 +1,6 @@
 package entities;
 
+import utilz.Constants.PADDLE;
 import utilz.Constants.GAME_WINDOW;
 
 import java.awt.*;

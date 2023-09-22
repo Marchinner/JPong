@@ -8,9 +8,14 @@ public class Ball extends Entity {
 
     private double xVelocity;
     private double yVelocity;
+    private Player player;
+    private Enemy enemy;
 
-    public Ball(float xPosition, float yPosition, float width, float height, Color color, float speed) {
+    public Ball(float xPosition, float yPosition, float width, float height, Color color, float speed, Player player,
+                Enemy enemy) {
         super(xPosition, yPosition, width, height, color, speed);
+        this.player = player;
+        this.enemy = enemy;
 
         generateInitialVelocity();
     }
@@ -19,7 +24,6 @@ public class Ball extends Entity {
         do {
             xVelocity = (Math.random() * getSpeed()) - getSpeed();
             yVelocity = (Math.random() * getSpeed()) - getSpeed();
-            System.out.println(xVelocity + yVelocity);
         } while (xVelocity + yVelocity > getSpeed() && xVelocity + getYPosition() < -getSpeed());
     }
 
@@ -34,6 +38,21 @@ public class Ball extends Entity {
                 xVelocity *= -1;
                 moveBall();
             }
+        }
+        touchedPlayerPaddle(player);
+    }
+
+    private boolean touchedPlayerPaddle(Player player) {
+        if (getXPosition() <= player.getXPosition() + player.getWidth()) {
+            if (getHeight() > player.getYPosition() && getHeight() < player.getYPosition() + player.getHeight()) {
+                System.out.println("TOUCHED PLAYER");
+                return true;
+            } else {
+                System.out.println("ALMOST");
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 
