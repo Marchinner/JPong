@@ -31,5 +31,9 @@ public class Constants {
         public static final float HIT_BONUS_SPEED = 1.2f;
     }
 
+    public static final class BOARD {
+        public static final String BOARD_SPRITE = "/gameBoard.png";
+    }
+
 
 }

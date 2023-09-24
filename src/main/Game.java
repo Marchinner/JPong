@@ -4,11 +4,16 @@ import entities.Ball;
 import entities.Enemy;
 import entities.Player;
 import inputs.KeyboardManager;
+import utilz.Constants;
 import utilz.Constants.PADDLE;
 import utilz.Constants.BALL;
 import utilz.Constants.GAME_WINDOW;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Game implements Runnable {
 
@@ -19,6 +24,7 @@ public class Game implements Runnable {
     private Ball ball;
     private Score gameScore;
     private KeyboardManager keyboardManager = new KeyboardManager();
+    private BufferedImage gameBoard = null;
 
     public Game() {
         initializeClasses();
@@ -40,6 +46,19 @@ public class Game implements Runnable {
     }
 
     private void initializeClasses() {
+        InputStream inputStream = Game.class.getResourceAsStream(Constants.BOARD.BOARD_SPRITE);
+        try {
+            gameBoard = ImageIO.read(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         player = new Player(
                 PADDLE.X_SPAWN_POINT,
                 PADDLE.Y_SPAWN_POINT,
@@ -94,8 +113,10 @@ public class Game implements Runnable {
     }
 
     private void background(Graphics graphics) {
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(0, 0, GAME_WINDOW.WIDTH, GAME_WINDOW.HEIGHT);
+//        graphics.setColor(Color.BLACK);
+//        graphics.fillRect(0, 0, GAME_WINDOW.WIDTH, GAME_WINDOW.HEIGHT);
+
+        graphics.drawImage(gameBoard, 0, 0, 800, 600, null);
     }
 
     @Override
