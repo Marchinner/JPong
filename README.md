@@ -27,13 +27,15 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 ## Roadmap
 
-- Add game Main Menu Screen, Pause Screen and Game Over Screen
+- [ ] Add game Main Menu Screen, Pause Screen and Game Over Screen
 
-- Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
+- [ ] Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
 
-- Add difficult levels for the Computer opponent
+- [ ] Add difficult levels for the Computer opponent
 
-- Add sort of effects of the ball hitting the paddle and special moves
+- [ ] Add sort of effects of the ball hitting the paddle and special moves
+
+- [X] Player and Computer paddle sprites.
 
 
 ## Install

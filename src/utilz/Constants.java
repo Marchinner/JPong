@@ -26,7 +26,7 @@ public class Constants {
     public static final class BALL {
         public static final float WIDTH = 10f;
         public static final float HEIGHT = 10f;
-        public static final Color COLOR = Color.RED;
+        public static final Color COLOR = Color.WHITE;
         public static final float SPEED = 2f;
         public static final float HIT_BONUS_SPEED = 1.2f;
     }

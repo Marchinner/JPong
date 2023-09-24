@@ -27,14 +27,15 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa�
 
 ## Roadmap
 
-- Adicionar Menu Principal do jogo, tela de Pausa e tela de Game Over
+- [ ] Adicionar Menu Principal do jogo, tela de Pausa e tela de Game Over
 
-- Aprimorar as mecânicas do jogo para que ele se torne mais difícil a cada batida da bola com uma raquete
+- [ ] Aprimorar as mecânicas do jogo para que ele se torne mais difícil a cada batida da bola com uma raquete
 
-- Adicionar diferentes níveis de dificultade para o oponente computador
+- [ ] Adicionar diferentes níveis de dificultade para o oponente computador
 
-- Adicionar alguns tipos de efeitos da bola atingindo a raquete e também 'movimentos especiais'
+- [ ] Adicionar alguns tipos de efeitos da bola atingindo a raquete e também 'movimentos especiais'
 
+- [X] Adicionar sprites de jogador e do computador.
 
 ## Instalação
 
