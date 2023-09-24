@@ -41,7 +41,7 @@ public class Enemy extends Entity {
 
     @Override
     public void draw(Graphics graphics) {
-        graphics.drawImage(enemySprite, (int) getXPosition() - 40, (int) getYPosition(), (int) getWidth() + 60,
+        graphics.drawImage(enemySprite, (int) getXPosition() - 50, (int) getYPosition(), (int) getWidth() + 60,
                 (int) getHeight(), null);
     }
 }

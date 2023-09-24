@@ -113,10 +113,11 @@ public class Game implements Runnable {
     }
 
     private void background(Graphics graphics) {
-//        graphics.setColor(Color.BLACK);
-//        graphics.fillRect(0, 0, GAME_WINDOW.WIDTH, GAME_WINDOW.HEIGHT);
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(0, 0, GAME_WINDOW.WIDTH, GAME_WINDOW.HEIGHT);
 
-        graphics.drawImage(gameBoard, 0, 0, 800, 600, null);
+        graphics.drawImage(gameBoard, GAME_WINDOW.X_OFFSET, GAME_WINDOW.Y_OFFSET, GAME_WINDOW.WIDTH - GAME_WINDOW.X_OFFSET * 2,
+                GAME_WINDOW.HEIGHT, null);
     }
 
     @Override

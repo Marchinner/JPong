@@ -6,6 +6,8 @@ public class Constants {
     public static final class GAME_WINDOW {
         public static final int FPS_LIMIT = 60;
         public static final int UPS_LIMIT = 120;
+        public static final int X_OFFSET = 50;
+        public static final int Y_OFFSET = 0;
         public static final String TITLE = "JPong";
         public static final int WIDTH = 800;
         public static final int HEIGHT = 600;
