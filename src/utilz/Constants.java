@@ -13,6 +13,8 @@ public class Constants {
     }
 
     public static final class PADDLE {
+        public static final String PLAYER_SPRITE = "/player.png";
+        public static final String ENEMY_SPRITE = "/enemy.png";
         public static final float WIDTH = 10;
         public static final float HEIGHT = 100;
         public static final Color COLOR = Color.WHITE;
