@@ -20,8 +20,10 @@ public class Playing {
     private Enemy enemy;
     private Ball ball;
     private Score score;
+    private Game game;
 
-    public Playing(Player player, Enemy enemy, Ball ball, Score score) {
+    public Playing(Game game, Player player, Enemy enemy, Ball ball, Score score) {
+        this.game = game;
         this.player = player;
         this.enemy = enemy;
         this.ball = ball;
@@ -32,6 +34,9 @@ public class Playing {
         player.update();
         ball.update();
         enemy.update(ball);
+        if (score.getEnemyScore() >= 5) {
+            game.setGamestate(Gamestate.GAME_OVER);
+        }
     }
 
     public void draw(Graphics graphics) {

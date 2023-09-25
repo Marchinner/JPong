@@ -3,10 +3,7 @@ package main;
 import entities.Ball;
 import entities.Enemy;
 import entities.Player;
-import gamestates.Gamestate;
-import gamestates.MainMenu;
-import gamestates.Paused;
-import gamestates.Playing;
+import gamestates.*;
 import inputs.KeyboardManager;
 import inputs.MouseManager;
 import utilz.Constants;
@@ -33,6 +30,7 @@ public class Game implements Runnable {
     private MouseManager mouseManager;
     private Playing playing;
     private MainMenu mainMenu;
+    private GameOver gameOver;
 
     public Game() {
         initializeClasses();
@@ -95,7 +93,8 @@ public class Game implements Runnable {
         );
 
         mainMenu = new MainMenu(this, mouseManager);
-        playing = new Playing(player, enemy, ball, gameScore);
+        playing = new Playing(this, player, enemy, ball, gameScore);
+        gameOver = new GameOver();
     }
 
     private void update() {
@@ -109,6 +108,7 @@ public class Game implements Runnable {
         switch (gamestate) {
             case MAIN_MENU -> mainMenu.draw(graphics);
             case PLAYING -> playing.draw(graphics);
+            case GAME_OVER -> gameOver.draw(graphics);
         }
     }
 
