@@ -3,7 +3,12 @@ package main;
 import entities.Ball;
 import entities.Enemy;
 import entities.Player;
+import gamestates.Gamestate;
+import gamestates.MainMenu;
+import gamestates.Paused;
+import gamestates.Playing;
 import inputs.KeyboardManager;
+import inputs.MouseManager;
 import utilz.Constants;
 import utilz.Constants.PADDLE;
 import utilz.Constants.BALL;
@@ -19,12 +24,15 @@ public class Game implements Runnable {
 
     private GameWindow gameWindow;
     private GamePanel gamePanel;
+    private Gamestate gamestate = Gamestate.MAIN_MENU;
     private Player player;
     private Enemy enemy;
     private Ball ball;
     private Score gameScore;
     private KeyboardManager keyboardManager = new KeyboardManager();
-    private BufferedImage gameBoard = null;
+    private MouseManager mouseManager;
+    private Playing playing;
+    private MainMenu mainMenu;
 
     public Game() {
         initializeClasses();
@@ -42,23 +50,13 @@ public class Game implements Runnable {
         System.out.println("Creating Game Window");
         gamePanel = new GamePanel(this);
         gamePanel.addKeyListener(keyboardManager);
+        mouseManager = new MouseManager(gamePanel);
+        gamePanel.addMouseListener(mouseManager);
+        gamePanel.addMouseMotionListener(mouseManager);
         gameWindow = new GameWindow(gamePanel);
     }
 
     private void initializeClasses() {
-        InputStream inputStream = Game.class.getResourceAsStream(Constants.BOARD.BOARD_SPRITE);
-        try {
-            gameBoard = ImageIO.read(inputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         player = new Player(
                 PADDLE.X_SPAWN_POINT,
                 PADDLE.Y_SPAWN_POINT,
@@ -96,28 +94,34 @@ public class Game implements Runnable {
                 gameScore
         );
 
+        mainMenu = new MainMenu(this, mouseManager);
+        playing = new Playing(player, enemy, ball, gameScore);
     }
 
     private void update() {
-        player.update();
-        ball.update();
-        enemy.update(ball);
+        switch (gamestate) {
+            case MAIN_MENU -> mainMenu.update();
+            case PLAYING -> playing.update();
+        }
     }
 
     public void render(Graphics graphics) {
-        background(graphics);
-        player.draw(graphics);
-        enemy.draw(graphics);
-        ball.draw(graphics);
-        gameScore.draw(graphics);
+        switch (gamestate) {
+            case MAIN_MENU -> mainMenu.draw(graphics);
+            case PLAYING -> playing.draw(graphics);
+        }
     }
 
-    private void background(Graphics graphics) {
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(0, 0, GAME_WINDOW.WIDTH, GAME_WINDOW.HEIGHT);
+    public MainMenu getMainMenu() {
+        return mainMenu;
+    }
 
-        graphics.drawImage(gameBoard, GAME_WINDOW.X_OFFSET, GAME_WINDOW.Y_OFFSET, GAME_WINDOW.WIDTH - GAME_WINDOW.X_OFFSET * 2,
-                GAME_WINDOW.HEIGHT, null);
+    public Gamestate getGamestate() {
+        return gamestate;
+    }
+
+    public void setGamestate(Gamestate gamestate) {
+        this.gamestate = gamestate;
     }
 
     @Override
