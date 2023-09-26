@@ -2,6 +2,7 @@ package entities;
 
 import inputs.KeyboardManager;
 import main.Score;
+import utilz.Constants;
 import utilz.Constants.BALL;
 
 import java.awt.*;
@@ -69,10 +70,19 @@ public class Ball extends Entity {
                 } else if (!canMoveLeft()) {
                     gameScore.setEnemyScore(gameScore.getEnemyScore() + 1);
                 }
-                xVelocity *= -1;
-                moveBall();
+//                xVelocity *= -1;
+//                moveBall();
+                resetPositions();
             }
         }
+    }
+
+    private void resetPositions() {
+        player.setYPosition(Constants.PADDLE.Y_SPAWN_POINT);
+        enemy.setYPosition(Constants.PADDLE.Y_SPAWN_POINT);
+        generateInitialVelocity();
+        setXPosition((float) Constants.GAME_WINDOW.WIDTH / 2);
+        setYPosition((float) Constants.GAME_WINDOW.HEIGHT / 2);
     }
 
     /***

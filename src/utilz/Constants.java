@@ -21,7 +21,7 @@ public class Constants {
         public static final float HEIGHT = 100;
         public static final Color COLOR = Color.WHITE;
         public static final float X_SPAWN_POINT = 30;
-        public static final float Y_SPAWN_POINT = 30;
+        public static final float Y_SPAWN_POINT = (float ) (GAME_WINDOW.HEIGHT / 2) - HEIGHT / 2;
         public static final float SPEED = 2;
     }
 
