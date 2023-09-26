@@ -12,26 +12,33 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa�
 
 ## Screenshots
 
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuScreenshot.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameplay.png?raw=true)
-
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverScreenshot.png?raw=true)
 
 ## Funcionalidades
 
+- Tela simples de menu principal com botões e game over.
+
 - O jogador pode mover sua raquete para cima e para baixo usando as setas do teclado.
 
-- A bola começa se movendo com um uma velocidade x e y 'pseudo' aleatória
+- A bola começa se movendo com uma velocidade x e y 'pseudo' aleatória
 
 - Contador de placar totalmente funcional
 
-- A raquete do oponente (computador) segue a posição da bola automaticamente
+- A raquete oponente (computador) segue a posição da bola automaticamente
 
 ## Roadmap
 
-- [ ] Adicionar Menu Principal do jogo, tela de Pausa e tela de Game Over
+- [X] Adicionar Menu Principal do jogo e tela de Game Over
 
-- [ ] Aprimorar as mecânicas do jogo para que ele se torne mais difícil a cada batida da bola com uma raquete
+- [ ] Adicionar tela de pause
 
-- [ ] Adicionar diferentes níveis de dificultade para o oponente computador
+- [ ] Aprimorar as mecânicas do jogo para que ele se dificulte a cada batida da bola com uma raquete
+
+- [ ] Aprimorar visual dos botões da interface, menu principal, tela de pause e tela de game over
+
+- [ ] Adicionar diferentes níveis de dificuldade para o oponente computador
 
 - [ ] Adicionar alguns tipos de efeitos da bola atingindo a raquete e também 'movimentos especiais'
 

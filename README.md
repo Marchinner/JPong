@@ -14,22 +14,33 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 ## Screenshots
 
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuScreenshot.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameplay.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverScreenshot.png?raw=true)
 
 
 ## Functionalities
 
+- A simple main menu with buttons and a game over screen
+
 - Player can move his paddle with UP and DOWN Arrow keys
-- The ball start moving with an pseudo randomized x and y speed
+
+- The ball start moving with a pseudo randomized x and y speed
+
 - Funcional score counter
+
 - Computer's paddle follows ball position automatically
 
 
 ## Roadmap
 
-- [ ] Add game Main Menu Screen, Pause Screen and Game Over Screen
+- [X] Add game Main Menu Screen and Game Over Screen
+
+- [ ] Add pause screen
 
 - [ ] Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
+
+- [ ] Improve Main menu, game over screen, pause screen and UI buttons
 
 - [ ] Add difficult levels for the Computer opponent
 
