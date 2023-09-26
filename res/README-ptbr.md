@@ -14,6 +14,7 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa√
 
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuScreenshot.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameplay.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pauseScreenshot.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverScreenshot.png?raw=true)
 
 ## Funcionalidades
