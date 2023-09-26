@@ -12,12 +12,14 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa�
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuScreenshot.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameplay.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pauseScreenshot.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverScreenshot.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuPrintPtBR.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/inGamePrintPtBR.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pausedPrintPtBR.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverPrint.png?raw=true)
 
 ## Funcionalidades
+
+- Seleção de Idioma (Inglês Americano e Português Brasileiro)
 
 - Tela simples de menu principal, pausa e game over com botões.
 
@@ -35,9 +37,11 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa�
 
 - [X] Adicionar tela de pausa
 
+- [X] Adicionar seleção de idioma
+
 - [ ] Aprimorar as mecânicas do jogo para que ele se dificulte a cada batida da bola com uma raquete
 
-- [ ] Aprimorar visual dos botões da interface, menu principal, tela de pause e tela de game over
+- [X] Aprimorar visual dos botões da interface, menu principal, tela de pause e tela de game over
 
 - [ ] Adicionar diferentes níveis de dificuldade para o oponente computador
 

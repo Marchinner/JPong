@@ -14,13 +14,15 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuScreenshot.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameplay.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pauseScreenshot.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverScreenshot.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuPrintEnUS.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/inGamePrintEnUS.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pausedPrintEnUS.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverPrint.png?raw=true)
 
 
 ## Functionalities
+
+- Language selection (American English and Brazilian Portuguese)
 
 - A simple main menu, pause and game over screen with buttons
 
@@ -39,9 +41,11 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 - [X] Add pause screen
 
+- [X] Add Language Selection
+
 - [ ] Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
 
-- [ ] Improve Main menu, game over screen, pause screen and UI buttons
+- [X] Improve Main menu, game over screen, pause screen and UI buttons
 
 - [ ] Add difficult levels for the Computer opponent
 
