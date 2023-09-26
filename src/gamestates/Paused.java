@@ -48,6 +48,9 @@ public class Paused {
     public void draw(Graphics graphics) {
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, Constants.GAME_WINDOW.WIDTH, Constants.GAME_WINDOW.HEIGHT);
+        graphics.setColor(Color.RED);
+        graphics.setFont(graphics.getFont().deriveFont(100f));
+        graphics.drawString("GAME PAUSED!", Constants.GAME_WINDOW.HEIGHT / 2 - 280, 100);
         resumeButton.draw(graphics);
         restartButton.draw(graphics);
     }
