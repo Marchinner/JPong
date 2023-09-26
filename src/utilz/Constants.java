@@ -30,7 +30,8 @@ public class Constants {
         public static final float HEIGHT = 10f;
         public static final Color COLOR = Color.WHITE;
         public static final float SPEED = 2f;
-        public static final float HIT_BONUS_SPEED = 1.2f;
+        public static final double HIT_BONUS_SPEED = 1.2;
+        public static final double MAX_VELOCITY = 10;
     }
 
     public static final class BOARD {

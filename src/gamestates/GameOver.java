@@ -6,14 +6,6 @@ import java.awt.*;
 
 public class GameOver {
 
-    public GameOver() {
-
-    }
-
-    public void update() {
-
-    }
-
     public void draw(Graphics graphics) {
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, Constants.GAME_WINDOW.WIDTH, Constants.GAME_WINDOW.HEIGHT);

@@ -3,15 +3,18 @@ package gamestates;
 import entities.Ball;
 import entities.Enemy;
 import entities.Player;
+import inputs.KeyboardManager;
 import main.Game;
 import main.Score;
 import utilz.Constants;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.Key;
 
 public class Playing {
 
@@ -21,9 +24,11 @@ public class Playing {
     private Ball ball;
     private Score score;
     private Game game;
+    private KeyboardManager keyboardManager;
 
-    public Playing(Game game, Player player, Enemy enemy, Ball ball, Score score) {
+    public Playing(Game game, KeyboardManager keyboardManager, Player player, Enemy enemy, Ball ball, Score score) {
         this.game = game;
+        this.keyboardManager = keyboardManager;
         this.player = player;
         this.enemy = enemy;
         this.ball = ball;
@@ -36,6 +41,9 @@ public class Playing {
         enemy.update(ball);
         if (score.getEnemyScore() >= 5) {
             game.setGamestate(Gamestate.GAME_OVER);
+        }
+        if (keyboardManager.isKeyPressed(KeyEvent.VK_ESCAPE)) {
+            game.setGamestate(Gamestate.PAUSED);
         }
     }
 

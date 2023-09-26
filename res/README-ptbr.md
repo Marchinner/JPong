@@ -18,7 +18,7 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa√
 
 ## Funcionalidades
 
-- Tela simples de menu principal com bot√µes e game over.
+- Tela simples de menu principal, pausa e game over com bot√µes.
 
 - O jogador pode mover sua raquete para cima e para baixo usando as setas do teclado.
 
@@ -32,7 +32,7 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa√
 
 - [X] Adicionar Menu Principal do jogo e tela de Game Over
 
-- [ ] Adicionar tela de pause
+- [X] Adicionar tela de pausa
 
 - [ ] Aprimorar as mec√¢nicas do jogo para que ele se dificulte a cada batida da bola com uma raquete
 

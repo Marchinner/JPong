@@ -107,8 +107,10 @@ public class Ball extends Entity {
      * Increases the speed of the ball by 'HIT_BONUS_SPEED' constant when it hits the paddles
      */
     private void hit() {
-        xVelocity *= BALL.HIT_BONUS_SPEED;
-        yVelocity *= BALL.HIT_BONUS_SPEED;
+        do {
+            xVelocity *= BALL.HIT_BONUS_SPEED;
+            yVelocity *= BALL.HIT_BONUS_SPEED;
+        } while (xVelocity <= BALL.MAX_VELOCITY || yVelocity <= BALL.MAX_VELOCITY);
     }
 
     /***

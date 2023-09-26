@@ -24,6 +24,12 @@ public class MouseManager implements MouseListener, MouseMotionListener {
             if (gamePanel.getGame().getMainMenu().getQuit().getButtonBox().contains(e.getX(), e.getY())) {
                 System.exit(0);
             }
+        } else if (gamePanel.getGame().getGamestate() == Gamestate.PAUSED) {
+            if (gamePanel.getGame().getPaused().getResumeButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().setGamestate(Gamestate.PLAYING);
+            } else if (gamePanel.getGame().getPaused().getRestartButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().restartGame();
+            }
         }
     }
 

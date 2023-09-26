@@ -21,7 +21,7 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 ## Functionalities
 
-- A simple main menu with buttons and a game over screen
+- A simple main menu, pause and game over screen with buttons
 
 - Player can move his paddle with UP and DOWN Arrow keys
 
@@ -36,7 +36,7 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 - [X] Add game Main Menu Screen and Game Over Screen
 
-- [ ] Add pause screen
+- [X] Add pause screen
 
 - [ ] Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
 

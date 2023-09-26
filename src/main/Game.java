@@ -31,6 +31,7 @@ public class Game implements Runnable {
     private Playing playing;
     private MainMenu mainMenu;
     private GameOver gameOver;
+    private Paused paused;
 
     public Game() {
         initializeClasses();
@@ -93,8 +94,9 @@ public class Game implements Runnable {
         );
 
         mainMenu = new MainMenu(this, mouseManager);
-        playing = new Playing(this, player, enemy, ball, gameScore);
+        playing = new Playing(this, keyboardManager, player, enemy, ball, gameScore);
         gameOver = new GameOver();
+        paused = new Paused(this, mouseManager);
     }
 
     private void update() {
@@ -109,6 +111,7 @@ public class Game implements Runnable {
             case MAIN_MENU -> mainMenu.draw(graphics);
             case PLAYING -> playing.draw(graphics);
             case GAME_OVER -> gameOver.draw(graphics);
+            case PAUSED -> paused.draw(graphics);
         }
     }
 
@@ -118,6 +121,10 @@ public class Game implements Runnable {
 
     public Gamestate getGamestate() {
         return gamestate;
+    }
+
+    public Paused getPaused() {
+        return paused;
     }
 
     public void setGamestate(Gamestate gamestate) {
@@ -164,5 +171,10 @@ public class Game implements Runnable {
 				updates = 0;
 			}
 		}
+    }
+
+    public void restartGame() {
+        gamestate = Gamestate.PLAYING;
+        initializeClasses();
     }
 }
