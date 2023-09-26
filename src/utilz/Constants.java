@@ -12,6 +12,7 @@ public class Constants {
         public static final int WIDTH = 800;
         public static final int HEIGHT = 600;
         public static final Dimension SIZE = new Dimension(WIDTH, HEIGHT);
+        public static final Color backgroundColor = new Color(150, 209, 243);
     }
 
     public static final class PADDLE {
@@ -38,5 +39,10 @@ public class Constants {
         public static final String BOARD_SPRITE = "/gameBoard.png";
     }
 
+    public static final class MAIN_MENU {
+        public static final String GAME_LOGO = "/icon.png";
+        public static final String BRAZIL_FLAG = "/brazilFlag.png";
+        public static final String USA_FLAG = "/usaFlag.png";
+    }
 
 }

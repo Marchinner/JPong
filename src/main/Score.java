@@ -1,6 +1,7 @@
 package main;
 
 import utilz.Constants;
+import static ui.Languages.*;
 
 import java.awt.*;
 
@@ -14,12 +15,12 @@ public class Score {
         graphics2D.drawRect(Constants.GAME_WINDOW.WIDTH / 2, 0, 1, Constants.GAME_WINDOW.HEIGHT);
         graphics2D.setFont(graphics2D.getFont().deriveFont(25f));
         graphics2D.setColor(Color.RED);
-        graphics2D.drawString("Jogador", 150, 30);
+        graphics2D.drawString(PLAYER_NAME_TEXT, 150, 30);
         graphics2D.setColor(Color.WHITE);
         graphics2D.drawString(Integer.toString(playerScore), 350, 30);
         graphics2D.drawString(Integer.toString(enemyScore), Constants.GAME_WINDOW.WIDTH - 370, 30);
         graphics2D.setColor(Color.BLUE);
-        graphics2D.drawString("Computador", Constants.GAME_WINDOW.WIDTH - 250, 30);
+        graphics2D.drawString(ENEMY_NAME_TEXT, Constants.GAME_WINDOW.WIDTH - 250, 30);
     }
 
     public int getPlayerScore() {

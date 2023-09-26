@@ -69,7 +69,7 @@ public class Playing {
             }
         }
 
-        graphics.setColor(Color.BLACK);
+        graphics.setColor(Constants.GAME_WINDOW.backgroundColor);
         graphics.fillRect(0, 0, Constants.GAME_WINDOW.WIDTH, Constants.GAME_WINDOW.HEIGHT);
 
         graphics.drawImage(gameBoard, Constants.GAME_WINDOW.X_OFFSET, Constants.GAME_WINDOW.Y_OFFSET, Constants.GAME_WINDOW.WIDTH - Constants.GAME_WINDOW.X_OFFSET * 2,

@@ -6,16 +6,13 @@ import entities.Player;
 import gamestates.*;
 import inputs.KeyboardManager;
 import inputs.MouseManager;
-import utilz.Constants;
+import ui.Language;
+import ui.Languages;
 import utilz.Constants.PADDLE;
 import utilz.Constants.BALL;
 import utilz.Constants.GAME_WINDOW;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
 
 public class Game implements Runnable {
 
@@ -32,11 +29,18 @@ public class Game implements Runnable {
     private MainMenu mainMenu;
     private GameOver gameOver;
     private Paused paused;
+    private Language language = Language.enUS;
+    private Languages gameLanguage;
 
     public Game() {
+        loadLanguage();
         initializeClasses();
         createGameWindow();
         startGameThread();
+    }
+
+    private void loadLanguage() {
+        gameLanguage = new Languages(language);
     }
 
     private void startGameThread() {
@@ -103,6 +107,7 @@ public class Game implements Runnable {
         switch (gamestate) {
             case MAIN_MENU -> mainMenu.update();
             case PLAYING -> playing.update();
+            case PAUSED -> paused.update();
         }
     }
 
@@ -113,6 +118,15 @@ public class Game implements Runnable {
             case GAME_OVER -> gameOver.draw(graphics);
             case PAUSED -> paused.draw(graphics);
         }
+    }
+
+    public Languages getGameLanguage() {
+        return gameLanguage;
+    }
+
+    public void setGameLanguage(Languages gameLanguage) {
+        this.gameLanguage = gameLanguage;
+        initializeClasses();
     }
 
     public MainMenu getMainMenu() {
@@ -129,6 +143,14 @@ public class Game implements Runnable {
 
     public void setGamestate(Gamestate gamestate) {
         this.gamestate = gamestate;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
     }
 
     @Override

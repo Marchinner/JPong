@@ -3,6 +3,7 @@ package gamestates;
 import inputs.MouseManager;
 import main.Game;
 import ui.UI;
+import static ui.Languages.*;
 import utilz.Constants;
 
 import java.awt.*;
@@ -18,21 +19,23 @@ public class Paused {
         this.game = game;
         this.mouseManager = mouseManager;
         resumeButton = new UI.Button(
+                game,
                 Constants.GAME_WINDOW.WIDTH / 2,
                 250,
                 124,
                 44,
-                "Resume",
-                Color.RED,
+                RESUME_BUTTON_TEXT,
+                Color.BLACK,
                 32f);
 
         restartButton = new UI.Button(
+                game,
                 Constants.GAME_WINDOW.WIDTH / 2,
                 450,
                 112,
                 44,
-                "Restart",
-                Color.RED,
+                RESTART_BUTTON_TEXT,
+                Color.BLACK,
                 32f
         );
     }
@@ -45,12 +48,20 @@ public class Paused {
         return restartButton;
     }
 
+    public void update() {
+
+    }
+
     public void draw(Graphics graphics) {
-        graphics.setColor(Color.BLACK);
+        int fontWidth;
+        int fontHeight;
+        graphics.setColor(Constants.GAME_WINDOW.backgroundColor);
         graphics.fillRect(0, 0, Constants.GAME_WINDOW.WIDTH, Constants.GAME_WINDOW.HEIGHT);
         graphics.setColor(Color.RED);
-        graphics.setFont(graphics.getFont().deriveFont(100f));
-        graphics.drawString("GAME PAUSED!", Constants.GAME_WINDOW.HEIGHT / 2 - 280, 100);
+        graphics.setFont(graphics.getFont().deriveFont(80f));
+        fontWidth = graphics.getFontMetrics().stringWidth(GAME_PAUSED_TEXT);
+        fontHeight = graphics.getFontMetrics().getMaxAscent() - graphics.getFontMetrics().getDescent();
+        graphics.drawString(GAME_PAUSED_TEXT, Constants.GAME_WINDOW.WIDTH / 2 - (fontWidth / 2), 100);
         resumeButton.draw(graphics);
         restartButton.draw(graphics);
     }
