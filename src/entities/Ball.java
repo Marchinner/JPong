@@ -70,8 +70,7 @@ public class Ball extends Entity {
                 } else if (!canMoveLeft()) {
                     gameScore.setEnemyScore(gameScore.getEnemyScore() + 1);
                 }
-//                xVelocity *= -1;
-//                moveBall();
+
                 resetPositions();
             }
         }
@@ -108,8 +107,11 @@ public class Ball extends Entity {
      */
     private void hit() {
         if ((xVelocity <= BALL.MAX_VELOCITY && xVelocity >= -BALL.MAX_VELOCITY) || (yVelocity <= BALL.MAX_VELOCITY) && (yVelocity >= -BALL.MAX_VELOCITY)) {
+            System.out.println("SPEED INCREASED!");
+            System.out.println("Old speed: " + xVelocity + " for x and " + yVelocity + " for y");
             xVelocity *= BALL.HIT_BONUS_SPEED;
             yVelocity *= BALL.HIT_BONUS_SPEED;
+            System.out.println("NEW speed: " + xVelocity + " for x and " + yVelocity + " for y");
         }
     }
 

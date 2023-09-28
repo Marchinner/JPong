@@ -43,7 +43,7 @@ I believe that with this project I learned most of the Object-oriented Programmi
 
 - [X] Add Language Selection
 
-- [ ] Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
+- [X] Improve the game mechanics so that it becomes more difficult with each hit of the ball on the paddle
 
 - [X] Improve Main menu, game over screen, pause screen and UI buttons
 

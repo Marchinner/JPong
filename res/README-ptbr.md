@@ -39,7 +39,7 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa�
 
 - [X] Adicionar seleção de idioma
 
-- [ ] Aprimorar as mecânicas do jogo para que ele se dificulte a cada batida da bola com uma raquete
+- [X] Aprimorar as mecânicas do jogo para que ele se dificulte a cada batida da bola com uma raquete
 
 - [X] Aprimorar visual dos botões da interface, menu principal, tela de pause e tela de game over
 
