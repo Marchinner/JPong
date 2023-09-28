@@ -50,10 +50,7 @@ public class MainMenu {
                 280,
                 500,
                 100,
-                53,
-                "",
-                Color.BLACK,
-                0f
+                53
         );
 
         usaButton = new UI.Button(
@@ -61,10 +58,7 @@ public class MainMenu {
                 420,
                 500,
                 100,
-                53,
-                "",
-                Color.BLACK,
-                0f
+                53
         );
     }
 
@@ -117,6 +111,10 @@ public class MainMenu {
 
         graphics.drawImage(brazilFlag, 280, 500, 100, 53, null);
         graphics.drawImage(usaFlag, 420, 500, 100, 53, null);
+        graphics.drawRect(brazilButton.getButtonBox().x, brazilButton.getButtonBox().y,
+                brazilButton.getButtonBox().width, brazilButton.getButtonBox().height);
+        graphics.drawRect(usaButton.getButtonBox().x, usaButton.getButtonBox().y,
+                usaButton.getButtonBox().width, usaButton.getButtonBox().height);
     }
 
     public UI.Button getBrazilButton() {

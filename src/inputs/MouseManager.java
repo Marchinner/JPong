@@ -4,6 +4,7 @@ import gamestates.Gamestate;
 import main.GamePanel;
 import ui.Language;
 import ui.Languages;
+
 import static ui.Languages.*;
 
 import java.awt.event.MouseEvent;
@@ -47,7 +48,6 @@ public class MouseManager implements MouseListener, MouseMotionListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
     }
 
     @Override
@@ -56,12 +56,10 @@ public class MouseManager implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
     }
 
     @Override
@@ -71,6 +69,24 @@ public class MouseManager implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-
+        if (gamePanel.getGame().getGamestate() == Gamestate.MAIN_MENU) {
+            if (gamePanel.getGame().getMainMenu().getPlay().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().getMainMenu().getPlay().mouseMoved(e);
+            } else if (gamePanel.getGame().getMainMenu().getQuit().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().getMainMenu().getQuit().mouseMoved(e);
+            } else {
+                gamePanel.getGame().getMainMenu().getPlay().setMouseIsOver(false);
+                gamePanel.getGame().getMainMenu().getQuit().setMouseIsOver(false);
+            }
+        } else if (gamePanel.getGame().getGamestate() == Gamestate.PAUSED) {
+            if (gamePanel.getGame().getPaused().getResumeButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().getPaused().getResumeButton().mouseMoved(e);
+            } else if (gamePanel.getGame().getPaused().getRestartButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().getPaused().getRestartButton().mouseMoved(e);
+            } else {
+                gamePanel.getGame().getPaused().getResumeButton().setMouseIsOver(false);
+                gamePanel.getGame().getPaused().getRestartButton().setMouseIsOver(false);
+            }
+        }
     }
 }
