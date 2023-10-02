@@ -15,7 +15,7 @@ Acredito que, com este projeto, absorvi a maior parte dos conceitos de Programa√
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuPrintPtBR.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/inGamePrintPtBR.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pausedPrintPtBR.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverPrint.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverPrintPtBR.png?raw=true)
 
 ## Funcionalidades
 

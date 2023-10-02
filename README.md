@@ -17,7 +17,7 @@ I believe that with this project I learned most of the Object-oriented Programmi
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/mainMenuPrintEnUS.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/inGamePrintEnUS.png?raw=true)
 ![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/pausedPrintEnUS.png?raw=true)
-![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverPrint.png?raw=true)
+![App Screenshot](https://github.com/Marchinner/JPong/blob/master/res/gameOverPrintEnUS.png?raw=true)
 
 
 ## Functionalities
