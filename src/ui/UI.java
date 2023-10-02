@@ -27,17 +27,6 @@ public class UI {
         private Color textColor;
         private Color foregroundColor;
 
-//        public Button(Game game, int x, int y, int width, int height, String text, Color color, float fontSize) {
-//            this.game = game;
-//            this.x = x;
-//            this.y = y;
-//            this.text = text;
-//            this.width = width;
-//            this.height = height;
-//            this.color = color;
-//            this.fontSize = fontSize;
-//        }
-
         public Button(Game game, int x, int y, String text, Color textColor, Color foregroundColor, float fontSize) {
             this.game = game;
             this.x = x;
@@ -47,15 +36,6 @@ public class UI {
             this.foregroundColor = foregroundColor;
             this.fontSize = fontSize;
         }
-
-//        public Button(Game game, int x, int y, String text, Color color, float fontSize) {
-//            this.game = game;
-//            this.x = x;
-//            this.y = y;
-//            this.text = text;
-//            this.color = color;
-//            this.fontSize = fontSize;
-//        }
 
         public Button(Game game, int x, int y, int width, int height) {
             this.game = game;
