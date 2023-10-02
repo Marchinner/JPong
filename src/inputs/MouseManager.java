@@ -41,6 +41,15 @@ public class MouseManager implements MouseListener, MouseMotionListener {
             if (gamePanel.getGame().getPaused().getResumeButton().getButtonBox().contains(e.getX(), e.getY())) {
                 gamePanel.getGame().setGamestate(Gamestate.PLAYING);
             } else if (gamePanel.getGame().getPaused().getRestartButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().setGamestate(Gamestate.PLAYING);
+                gamePanel.getGame().restartGame();
+            } else if (gamePanel.getGame().getPaused().getMainMenuButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().setGamestate(Gamestate.MAIN_MENU);
+                gamePanel.getGame().restartGame();
+            }
+        } else if (gamePanel.getGame().getGamestate() == Gamestate.GAME_OVER) {
+            if (gamePanel.getGame().getGameOver().getMainMenu().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().setGamestate(Gamestate.MAIN_MENU);
                 gamePanel.getGame().restartGame();
             }
         }
@@ -83,9 +92,18 @@ public class MouseManager implements MouseListener, MouseMotionListener {
                 gamePanel.getGame().getPaused().getResumeButton().mouseMoved(e);
             } else if (gamePanel.getGame().getPaused().getRestartButton().getButtonBox().contains(e.getX(), e.getY())) {
                 gamePanel.getGame().getPaused().getRestartButton().mouseMoved(e);
+            } else if (gamePanel.getGame().getPaused().getMainMenuButton().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().getPaused().getMainMenuButton().mouseMoved(e);
             } else {
                 gamePanel.getGame().getPaused().getResumeButton().setMouseIsOver(false);
                 gamePanel.getGame().getPaused().getRestartButton().setMouseIsOver(false);
+                gamePanel.getGame().getPaused().getMainMenuButton().setMouseIsOver(false);
+            }
+        } else if (gamePanel.getGame().getGamestate() == Gamestate.GAME_OVER) {
+            if (gamePanel.getGame().getGameOver().getMainMenu().getButtonBox().contains(e.getX(), e.getY())) {
+                gamePanel.getGame().getGameOver().getMainMenu().mouseMoved(e);
+            } else {
+                gamePanel.getGame().getGameOver().getMainMenu().setMouseIsOver(false);
             }
         }
     }

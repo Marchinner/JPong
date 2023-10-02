@@ -5,6 +5,8 @@ import inputs.MouseManager;
 import main.Game;
 import ui.UI;
 import static ui.Languages.*;
+import static utilz.Constants.COLORS.DEFAULT_FOREGROUND_COLOR;
+
 import utilz.Constants;
 
 import javax.imageio.ImageIO;
@@ -28,20 +30,18 @@ public class MainMenu {
                 game,
                 Constants.GAME_WINDOW.WIDTH / 2,
                 Constants.GAME_WINDOW.HEIGHT / 2,
-                90,
-                44,
                 PLAY_BUTTON_TEXT,
                 Color.BLACK,
+                DEFAULT_FOREGROUND_COLOR,
                 36f);
 
         quit = new UI.Button(
                 game,
                 Constants.GAME_WINDOW.WIDTH / 2,
                 Constants.GAME_WINDOW.HEIGHT / 2 + 80,
-                175,
-                44,
                 EXIT_BUTTON_TEXT,
                 Color.BLACK,
+                DEFAULT_FOREGROUND_COLOR,
                 32f
         );
 

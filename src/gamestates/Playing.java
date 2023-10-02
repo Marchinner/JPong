@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.Key;
 
+import static utilz.Constants.SCORE.MAX_SCORE;
+
 public class Playing {
 
     private BufferedImage gameBoard = null;
@@ -39,7 +41,7 @@ public class Playing {
         player.update();
         ball.update();
         enemy.update(ball);
-        if (score.getEnemyScore() >= 5) {
+        if (score.getEnemyScore() >= MAX_SCORE) {
             game.setGamestate(Gamestate.GAME_OVER);
         }
         if (keyboardManager.isKeyPressed(KeyEvent.VK_ESCAPE)) {

@@ -18,7 +18,8 @@ public class Game implements Runnable {
 
     private GameWindow gameWindow;
     private GamePanel gamePanel;
-    private Gamestate gamestate = Gamestate.MAIN_MENU;
+    private Gamestate gamestate = Gamestate.MAIN_MENU;    // default gamestate
+//    private Gamestate gamestate = Gamestate.GAME_OVER;      // debug purpose
     private Player player;
     private Enemy enemy;
     private Ball ball;
@@ -99,7 +100,7 @@ public class Game implements Runnable {
 
         mainMenu = new MainMenu(this, mouseManager);
         playing = new Playing(this, keyboardManager, player, enemy, ball, gameScore);
-        gameOver = new GameOver();
+        gameOver = new GameOver(this, mouseManager);
         paused = new Paused(this, mouseManager);
     }
 
@@ -127,6 +128,10 @@ public class Game implements Runnable {
     public void setGameLanguage(Languages gameLanguage) {
         this.gameLanguage = gameLanguage;
         initializeClasses();
+    }
+
+    public GameOver getGameOver() {
+        return gameOver;
     }
 
     public MainMenu getMainMenu() {
@@ -196,7 +201,7 @@ public class Game implements Runnable {
     }
 
     public void restartGame() {
-        gamestate = Gamestate.PLAYING;
+//        gamestate = Gamestate.PLAYING;
         initializeClasses();
     }
 }

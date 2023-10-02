@@ -4,6 +4,8 @@ import inputs.MouseManager;
 import main.Game;
 import ui.UI;
 import static ui.Languages.*;
+import static utilz.Constants.COLORS.DEFAULT_FOREGROUND_COLOR;
+
 import utilz.Constants;
 
 import java.awt.*;
@@ -14,6 +16,7 @@ public class Paused {
     private MouseManager mouseManager;
     private UI.Button resumeButton;
     private UI.Button restartButton;
+    private UI.Button mainMenuButton;
 
     public Paused(Game game, MouseManager mouseManager) {
         this.game = game;
@@ -22,20 +25,27 @@ public class Paused {
                 game,
                 Constants.GAME_WINDOW.WIDTH / 2,
                 250,
-                124,
-                44,
                 RESUME_BUTTON_TEXT,
                 Color.BLACK,
+                DEFAULT_FOREGROUND_COLOR,
                 32f);
 
         restartButton = new UI.Button(
                 game,
                 Constants.GAME_WINDOW.WIDTH / 2,
                 450,
-                112,
-                44,
                 RESTART_BUTTON_TEXT,
                 Color.BLACK,
+                DEFAULT_FOREGROUND_COLOR,
+                32f
+        );
+        mainMenuButton = new UI.Button(
+                game,
+                Constants.GAME_WINDOW.WIDTH / 2,
+                550,
+                BACK_TO_MAIN_MENU_TEXT,
+                Color.BLACK,
+                DEFAULT_FOREGROUND_COLOR,
                 32f
         );
     }
@@ -46,6 +56,10 @@ public class Paused {
 
     public UI.Button getRestartButton() {
         return restartButton;
+    }
+
+    public UI.Button getMainMenuButton() {
+        return mainMenuButton;
     }
 
     public void update() {
@@ -64,5 +78,6 @@ public class Paused {
         graphics.drawString(GAME_PAUSED_TEXT, Constants.GAME_WINDOW.WIDTH / 2 - (fontWidth / 2), 100);
         resumeButton.draw(graphics);
         restartButton.draw(graphics);
+        mainMenuButton.draw(graphics);
     }
 }

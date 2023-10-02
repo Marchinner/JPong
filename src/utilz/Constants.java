@@ -3,6 +3,11 @@ package utilz;
 import java.awt.*;
 
 public class Constants {
+
+    public static final class COLORS {
+        public static final Color DEFAULT_FOREGROUND_COLOR = new Color(0, 174, 231);
+    }
+
     public static final class GAME_WINDOW {
         public static final int FPS_LIMIT = 60;
         public static final int UPS_LIMIT = 120;
@@ -37,6 +42,11 @@ public class Constants {
 
     public static final class BOARD {
         public static final String BOARD_SPRITE = "/gameBoard.png";
+    }
+
+    public static final class SCORE {
+        public static final int MAX_SCORE = 5;  // default score
+//        public static final int MAX_SCORE = 1;  // debug score
     }
 
     public static final class MAIN_MENU {

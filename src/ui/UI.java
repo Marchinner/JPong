@@ -1,13 +1,11 @@
 package ui;
 
 import main.Game;
-import utilz.Constants;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.geom.Rectangle2D;
 
 public class UI {
 
@@ -26,17 +24,38 @@ public class UI {
         private int fontHeight;
         private boolean isPressed = false;
         private boolean mouseIsOver = false;
+        private Color textColor;
+        private Color foregroundColor;
 
-        public Button(Game game, int x, int y, int width, int height, String text, Color color, float fontSize) {
+//        public Button(Game game, int x, int y, int width, int height, String text, Color color, float fontSize) {
+//            this.game = game;
+//            this.x = x;
+//            this.y = y;
+//            this.text = text;
+//            this.width = width;
+//            this.height = height;
+//            this.color = color;
+//            this.fontSize = fontSize;
+//        }
+
+        public Button(Game game, int x, int y, String text, Color textColor, Color foregroundColor, float fontSize) {
             this.game = game;
             this.x = x;
             this.y = y;
             this.text = text;
-            this.width = width;
-            this.height = height;
-            this.color = color;
+            this.textColor = textColor;
+            this.foregroundColor = foregroundColor;
             this.fontSize = fontSize;
         }
+
+//        public Button(Game game, int x, int y, String text, Color color, float fontSize) {
+//            this.game = game;
+//            this.x = x;
+//            this.y = y;
+//            this.text = text;
+//            this.color = color;
+//            this.fontSize = fontSize;
+//        }
 
         public Button(Game game, int x, int y, int width, int height) {
             this.game = game;
@@ -52,10 +71,10 @@ public class UI {
             if (mouseIsOver) {
                 graphics.setColor(Color.WHITE);
             } else {
-                graphics.setColor(new Color(0, 174, 231));
+                graphics.setColor(foregroundColor);
             }
             graphics.fillRect((x - fontWidth / 2) - 4, (y - (fontHeight)) - 4, fontWidth + 9, fontHeight + 10);
-            graphics.setColor(color);
+            graphics.setColor(textColor);
             graphics.setFont(graphics.getFont().deriveFont(Font.BOLD, fontSize));
             fontWidth = graphics.getFontMetrics().stringWidth(text);
             fontHeight = graphics.getFontMetrics().getMaxAscent() - graphics.getFontMetrics().getDescent();
